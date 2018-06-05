@@ -323,7 +323,7 @@ int main(int argc, char** argv)
                 char sn[4], tmpname[256];
                 int num = -1, nbuff = 0, nl = strlen(fname);
 
-                DIR * dir = opendir(".");
+                DIR * dir = opendir("data/");
                 struct dirent *entry;
                 if (dir!= NULL) {
                     while ( (entry = readdir(dir)) != NULL) {
@@ -645,7 +645,7 @@ int main(int argc, char** argv)
                                    psflag = 1;
                                    num++;
                                    char OUTPUT_FILENAME[256];
-                                   sprintf(OUTPUT_FILENAME,"%s%d%d%d%d.dat",fname,num/1000,num/100,num/10,num);
+                                   sprintf(OUTPUT_FILENAME,"data/%s%d%d%d%d.dat",fname,num/1000,num/100,num/10,num);
                                    fid = fopen(OUTPUT_FILENAME,"w");
                                    wprintw(wdebug,"Запись в файл %s\n",OUTPUT_FILENAME);wrefresh(wdebug);}}
                     if(key == 'f'){if(psflag== 1) {
